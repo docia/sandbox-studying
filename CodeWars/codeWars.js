@@ -1,4 +1,4 @@
-<!-- function pickIt(arr){
+function pickIt(arr){
   var odd=[],even=[];
   
   for ( let i = 0; i < arr.length; i++){
@@ -22,13 +22,5 @@ describe("Tests", () => {
     Test.assertSimilar(pickIt([11,21,31]),[[11,21,31],[]]);
     Test.assertSimilar(pickIt([8,1,5,4,6,1,1]),[[1,5,1,1],[8,4,6]]);
   });
-}); -->
+});
 
-
-function abTest(a, b) {
-if(a<0 || b <0){}
-
-return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
-}
-
-abTest(2,2);
