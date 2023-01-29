@@ -324,4 +324,15 @@ function phoneticLookup(val) {
   return result;
 }
 
-console.log(phoneticLookup("bravo"));
+console.log(phoneticLookup("bravo")); 
+
+
+function checkObj(obj, checkProp) {
+
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } return "Not Found";
+}
+
+checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" });
+console.log(checkObj("gift", "pony"));
