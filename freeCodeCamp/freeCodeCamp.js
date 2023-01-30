@@ -336,3 +336,28 @@ function checkObj(obj, checkProp) {
 
 checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" });
 console.log(checkObj("gift", "pony"));
+
+const myMusic = [
+   {
+     artist:"Bob Marley",
+     title: "Song",
+     release_year: 1290,
+     formats: [
+       "CD",
+       "8T",
+       "LP"
+     ]
+
+   },
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
