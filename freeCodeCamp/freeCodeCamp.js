@@ -437,23 +437,29 @@ const recordCollection = {
 
 // updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 
-const ourArray = [];
+const descendingArray = [];
 let i = 5;
 
 while (i >= 0) {
-  ourArray.push(i);
+  descendingArray.push(i);
   i--;
 }
-console.log(ourArray);
+console.log(descendingArray);
 
-const hisArray = [];
+const increasingArray = [];
 for (let i = 0; i < 6; i++){
-  hisArray.push(i);
+  increasingArray.push(i);
 }
-console.log(hisArray);
+console.log(increasingArray);
 
-const herArray = [];
+const oddIncreasingArray = [];
 for ( let i = 1; i < 10; i +=2){
-    herArray.push(i);
+    oddIncreasingArray.push(i);
 }
 console.log(herArray);
+
+const oddDescendingArray = [];
+for (let i = 9; i > 0; i -= 2){
+  oddDescendingArray.push(i);
+}
+console.log(oddDescendingArray);
