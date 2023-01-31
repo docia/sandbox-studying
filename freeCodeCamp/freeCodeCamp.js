@@ -445,3 +445,9 @@ while (i >= 0) {
   i--;
 }
 console.log(ourArray);
+
+const hisArray = [];
+for (let i = 0; i < 6; i++){
+  hisArray.push(i);
+}
+console.log(hisArray);
