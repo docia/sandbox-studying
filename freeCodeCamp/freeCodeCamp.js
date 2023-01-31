@@ -418,21 +418,30 @@ const recordCollection = {
   }
 };
 
-// Only change code below this line
-function updateRecords(records, id, prop, value) {
-  if (prop != tracks || value != ''){
-    prop = value;
-  } 
-  if (prop == tracks && id.hasOwnProperty(tracks) == false) {
-    let arr = new Array();
-    arr.push(value);
-  }
-  if (prop == tracks || value !== "") {
-    recordCollection.id.tracks[-1].push(value);
-  } else if (value === "") {
-    pop(prop);
-  }
-  return records;
-}
+// // Only change code below this line
+// function updateRecords(records, id, prop, value) {
+//   if (prop != tracks || value != ''){
+//     prop = value;
+//   } 
+//   if (prop == tracks && id.hasOwnProperty(tracks) == false) {
+//     let arr = new Array();
+//     arr.push(value);
+//   }
+//   if (prop == tracks || value !== "") {
+//     recordCollection.id.tracks[-1].push(value);
+//   } else if (value === "") {
+//     pop(prop);
+//   }
+//   return records;
+// }
 
-updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+// updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+const ourArray = [];
+let i = 5;
+
+while (i >= 0) {
+  ourArray.push(i);
+  i--;
+}
+console.log(ourArray);
