@@ -451,3 +451,9 @@ for (let i = 0; i < 6; i++){
   hisArray.push(i);
 }
 console.log(hisArray);
+
+const herArray = [];
+for ( let i = 1; i < 10; i +=2){
+    herArray.push(i);
+}
+console.log(herArray);
