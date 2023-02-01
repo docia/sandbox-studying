@@ -429,3 +429,13 @@ function multiplyAll(arr) {
 
 multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 console.log(multiplyAll([[1, 2], [3, 4], [5, 6, 7]]));
+
+const newArray = [];
+let a = 10;
+
+do{
+  myArray.push(a);
+   a++;
+} while (a < 5);
+
+console.log(myArray);
