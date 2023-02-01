@@ -397,7 +397,7 @@ const oddIncreasingArray = [];
 for (let i = 1; i < 10; i += 2) {
 	oddIncreasingArray.push(i);
 }
-console.log(herArray);
+console.log(oddIncreasingArray);
 
 const oddDescendingArray = [];
 for (let i = 9; i > 0; i -= 2) {
@@ -413,3 +413,19 @@ for (let i = 0; i < myArr.length; i++) {
 	total += myArr[i];
 	console.log(total);
 }
+
+function multiplyAll(arr) {
+  let product = 1;
+
+  for (let i=0;i<arr.length; i++) {
+  for (let j=0; j<arr[i].length; j++) {
+      product *= arr[i][j];
+      console.log(product);
+  }
+}
+
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+console.log(multiplyAll([[1, 2], [3, 4], [5, 6, 7]]));
