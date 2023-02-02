@@ -250,6 +250,7 @@ function cc(card) {
 		return count + " Hold";
 	}
 }
+// OBJECTS
 
 cc(2);
 cc(3);
@@ -458,6 +459,50 @@ console.log(newSum([2, 3, 4], 1));
 
 // recursion (find 3!)
 function fact(n) {
-  return n <= 0 ? 1 : n * fact(n - 1);
+	return n <= 0 ? 1 : n * fact(n - 1);
 }
 console.log(fact(3));
+
+// Profile Lookup
+const contacts = [
+	{
+		firstName: "Akira",
+		lastName: "Laine",
+		number: "0543236543",
+		likes: ["Pizza", "Coding", "Brownie Points"],
+	},
+	{
+		firstName: "Harry",
+		lastName: "Potter",
+		number: "0994372684",
+		likes: ["Hogwarts", "Magic", "Hagrid"],
+	},
+	{
+		firstName: "Sherlock",
+		lastName: "Holmes",
+		number: "0487345643",
+		likes: ["Intriguing Cases", "Violin"],
+	},
+	{
+		firstName: "Kristian",
+		lastName: "Vos",
+		number: "unknown",
+		likes: ["JavaScript", "Gaming", "Foxes"],
+	},
+];
+
+function lookUpProfile(name, prop) {
+
+  for (let i = 0; i < contacts.length; i++) { // loop through arrays
+		if (contacts[i].firstName === name) { 
+			if (contacts[i].hasOwnProperty(prop)) {
+				return contacts[i][prop];
+			} else {
+				return "No such property";
+			}
+		}
+	}
+	return "No such contact";
+}
+
+lookUpProfile("Akira", "likes");
