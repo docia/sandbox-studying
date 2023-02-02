@@ -496,7 +496,7 @@ function lookUpProfile(name, prop) {
   for (let i = 0; i < contacts.length; i++) { // loop through arrays
 		if (contacts[i].firstName === name) { 
 			if (contacts[i].hasOwnProperty(prop)) {
-				return contacts[i][prop];
+				return contacts[i][prop]; // what is the difference between contacts[i][prop] and contacts[i]["prop"] ?
 			} else {
 				return "No such property";
 			}
