@@ -405,7 +405,6 @@ for (let i = 9; i > 0; i -= 2) {
 }
 console.log(oddDescendingArray);
 
-
 const myArr = [2, 3, 4, 5, 6];
 let total = 0;
 
@@ -415,27 +414,50 @@ for (let i = 0; i < myArr.length; i++) {
 }
 
 function multiplyAll(arr) {
-  let product = 1;
+	let product = 1;
 
-  for (let i=0;i<arr.length; i++) {
-  for (let j=0; j<arr[i].length; j++) {
-      product *= arr[i][j];
-      console.log(product);
-  }
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < arr[i].length; j++) {
+			product *= arr[i][j];
+			console.log(product);
+		}
+	}
+
+	return product;
 }
 
-  return product;
-}
-
-multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
-console.log(multiplyAll([[1, 2], [3, 4], [5, 6, 7]]));
+multiplyAll([
+	[1, 2],
+	[3, 4],
+	[5, 6, 7],
+]);
+console.log(
+	multiplyAll([
+		[1, 2],
+		[3, 4],
+		[5, 6, 7],
+	])
+);
 
 const newArray = [];
 let a = 10;
 
-do{
-  myArray.push(a);
-   a++;
+do {
+	myArray.push(a);
+	a++;
 } while (a < 5);
 
 console.log(myArray);
+
+// recursion (sum value from arr)
+function newSum(arr, n) {
+	return n <= 0 ? 0 : newSum(arr, n - 1) + arr[n - 1];
+}
+
+console.log(newSum([2, 3, 4], 1));
+
+// recursion (find 3!)
+function fact(n) {
+  return n <= 0 ? 1 : n * fact(n - 1);
+}
+console.log(fact(3));
