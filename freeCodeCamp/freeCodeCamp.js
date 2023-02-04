@@ -450,7 +450,7 @@ do {
 
 console.log(myArray);
 
-// recursion (sum value from arr)
+// RECURSION (sum value from arr)
 function newSum(arr, n) {
 	return n <= 0 ? 0 : newSum(arr, n - 1) + arr[n - 1];
 }
@@ -513,24 +513,22 @@ function randomFraction() {
 console.log(randomFraction());
 
 function randomWholeNum() {
-  return Math.floor(Math.random() * 10); // return random whole number between 0 and 9 (10 won't be included)
+	return Math.floor(Math.random() * 10); // return random whole number between 0 and 9 (10 won't be included)
 }
 
-
 function randomRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min; 
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 console.log(randomRange());
 
-
 function convertToInteger(str) {
- return parseInt(str); // converts an int to str
+	return parseInt(str); // converts an int to str
 }
 
 convertToInteger("56");
 
 function convertToInteger(str) {
-  return parseInt(str,2); // base = 2 means it is a binary number
+	return parseInt(str, 2); // base = 2 means it is a binary number
 }
 
 convertToInteger("10011");
