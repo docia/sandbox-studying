@@ -526,3 +526,11 @@ console.log(randomRange());
 function convertToInteger(str) {
  return parseInt(str); // converts an int to str
 }
+
+convertToInteger("56");
+
+function convertToInteger(str) {
+  return parseInt(str,2); // base = 2 means it is a binary number
+}
+
+convertToInteger("10011");
