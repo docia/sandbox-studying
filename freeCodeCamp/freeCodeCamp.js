@@ -524,7 +524,5 @@ console.log(randomRange());
 
 
 function convertToInteger(str) {
- return parseInt(str);
+ return parseInt(str); // converts an int to str
 }
-
-convertToInteger("56");
