@@ -515,3 +515,9 @@ console.log(randomFraction());
 function randomWholeNum() {
   return Math.floor(Math.random() * 10); // return random whole number between 0 and 9 (10 won't be included)
 }
+
+
+function randomRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+console.log(randomRange());
