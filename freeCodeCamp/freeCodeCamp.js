@@ -546,4 +546,5 @@ function countup(n) {
 		return downArray;
 	}
 }
-console.log(countup(2));
+console.log(countup(2)); // [1,2]
+
