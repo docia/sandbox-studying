@@ -532,3 +532,18 @@ function convertToInteger(str) {
 }
 
 convertToInteger("10011");
+
+// RECURSION countup
+
+function countup(n) {
+	if (n < 1) {
+		
+		return [];
+	} else {
+		
+		let downArray = countup(n - 1);
+		downArray.push(n);
+		return downArray;
+	}
+}
+console.log(countup(2));
