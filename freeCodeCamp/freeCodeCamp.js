@@ -537,10 +537,8 @@ convertToInteger("10011");
 
 function countup(n) {
 	if (n < 1) {
-		
 		return [];
 	} else {
-		
 		let downArray = countup(n - 1);
 		downArray.push(n);
 		return downArray;
@@ -548,3 +546,31 @@ function countup(n) {
 }
 console.log(countup(2)); // [1,2]
 
+// recursion find a factorial n!
+function fact(n){
+	if(n<=1){
+		
+		return 1;
+	} else {
+		n * fact(n-1); //  n =3; 3-1 =2, 
+					   //   n=2; 2-1 =1,
+					   //  n=1; 
+					   // 1*2=2
+					   // 2*3 =6
+	}
+
+}
+console.log(fact(3));
+
+// recursion countdown [5,4,3,2,1]
+function countdown(n){
+  if (n < 1) {
+	debugger
+    return [];
+  } else {
+	debugger
+    const output = [n];
+    return output.concat(countdown(n - 1));
+  }
+}
+console.log(countdown(5));
