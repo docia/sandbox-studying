@@ -565,12 +565,22 @@ console.log(fact(3));
 // recursion countdown [5,4,3,2,1]
 function countdown(n){
   if (n < 1) {
-	debugger
+	// debugger
     return [];
   } else {
-	debugger
+	// debugger
     const output = [n];
     return output.concat(countdown(n - 1));
   }
 }
 console.log(countdown(5));
+
+// recursion create an array with the numbers in range from startNum to endNum
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum === endNum){
+  return [startNum];
+  } else {
+    return rangeOfNumbers(startNum, endNum - 1).concat([endNum])
+  }
+};
+console.log(rangeOfNumbers(1, 5)); // [1,2,3,4,5]
