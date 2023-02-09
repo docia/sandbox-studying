@@ -547,52 +547,56 @@ function countup(n) {
 console.log(countup(2)); // [1,2]
 
 // recursion find a factorial n!
-function fact(n){
-	if(n<=1){
-		
+function fact(n) {
+	if (n <= 1) {
 		return 1;
 	} else {
-		n * fact(n-1); //  n =3; 3-1 =2, 
-					   //   n=2; 2-1 =1,
-					   //  n=1; 
-					   // 1*2=2
-					   // 2*3 =6
+		n * fact(n - 1); //  n =3; 3-1 =2,
+		//   n=2; 2-1 =1,
+		//  n=1;
+		// 1*2=2
+		// 2*3 =6
 	}
-
 }
 console.log(fact(3));
 
 // recursion countdown [5,4,3,2,1]
-function countdown(n){
-  if (n < 1) {
-	// debugger
-    return [];
-  } else {
-	// debugger
-    const output = [n];
-    return output.concat(countdown(n - 1));
-  }
+function countdown(n) {
+	if (n < 1) {
+		// debugger
+		return [];
+	} else {
+		// debugger
+		const output = [n];
+		return output.concat(countdown(n - 1));
+	}
 }
 console.log(countdown(5));
 
 // recursion create an array with the numbers in range from startNum to endNum
 function rangeOfNumbers(startNum, endNum) {
-  if(startNum === endNum){
-  return [startNum];
-  } else {
-    return rangeOfNumbers(startNum, endNum - 1).concat([endNum])
-  }
-};
+	if (startNum === endNum) {
+		return [startNum];
+	} else {
+		return rangeOfNumbers(startNum, endNum - 1).concat([endNum]);
+	}
+}
 console.log(rangeOfNumbers(1, 5)); // [1,2,3,4,5]
 
-
 function checkScope() {
-  let i = 'function scope';
-  if (true) {
-    let i = 'block scope';
-    console.log('Block scope i is: ', i); //Block scope i is: block scope
-  }
-  console.log('Function scope i is: ', i); // Function scope i is: function scop
-  return i;
+	let i = "function scope";
+	if (true) {
+		let i = "block scope";
+		console.log("Block scope i is: ", i); //Block scope i is: block scope
+	}
+	console.log("Function scope i is: ", i); // Function scope i is: function scop
+	return i;
 }
 
+const s = [5, 7, 2];
+function editInPlace() {
+	s[0] = 2;
+	s[1] = 5;
+	s[2] = 7;
+}
+editInPlace(); // [2,5,7]
