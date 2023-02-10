@@ -621,3 +621,10 @@ console.log(freezeObj());
 // [TypeError: Cannot assign to read only property 'PI' of object '#<Object>']
 // [TypeError: Cannot assign to read only property 'PI' of object '#<Object>']
 // 3.14
+
+
+var magic = function() {
+  return new Date();
+};
+// is simpified to ->
+const magic = () => new Date();
