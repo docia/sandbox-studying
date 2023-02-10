@@ -627,4 +627,8 @@ var magic = function() {
   return new Date();
 };
 // is simpified to ->
-const magic = () => new Date();
+const newMagic = () => new Date();
+
+const doubler = (item) => item * 2;
+console.log(doubler(4)); // 8
+
