@@ -632,3 +632,7 @@ const newMagic = () => new Date();
 const doubler = (item) => item * 2;
 console.log(doubler(4)); // 8
 
+const increment = (number, value = 1) => number + value;
+console.log(increment(1)); // 1+1=2
+console.log(increment(1, 3)); // 1+3=4
+
