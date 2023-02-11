@@ -649,7 +649,8 @@ console.log(newPupilsAge);
 const excellentPupils = pupils.filter(person => person.mark > 6); // filters for pupils whose marks over 6
 console.log(excellentPupils);
 
-const totalMark = pupils.reduce((total,person) => total + person.mark, 0); // with each iterration "person" the previousValue "total" modifies with the iterrated value "person.mark". 0 - default number. 
+const totalMark = pupils.reduce((total,person) => total + person.mark, 0); // with each iterration "person" the previousValue
+// "total" modifies with the iterrated value "person.mark". 0 - default number. 
 console.log(totalMark); // sum(12,5,7,3,9)
 
 const newPupilsArr = pupils
@@ -724,3 +725,10 @@ const newPupilsArr = pupils
 
 // console.log('car full: ', car)
 // console.log('car other: ', rest)
+
+const totalSum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1,2,3,4)); //10
+
+
