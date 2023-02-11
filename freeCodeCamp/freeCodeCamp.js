@@ -635,3 +635,22 @@ console.log(doubler(4)); // 8
 const increment = (number, value = 1) => number + value;
 console.log(increment(1)); // 1+1=2
 console.log(increment(1, 3)); // 1+3=4
+
+const pupils = [
+	{ name: "Sarah", age: 12, grade: 5, mark: 12},
+	{ name: "Dean", age: 15, grade: 6, mark: 5 },
+	{ name: "Bob", age: 8, grade: 4, mark: 7 },
+	{ name: "Klara", age: 10, grade: 3 },
+	{ name: "Markus", age: 19, grade: 10, mark: 9},
+]
+const newPupilsAge = pupils.map(person => person.age + 1) // map() - modify a current array in a new one by modifying all the values in an array 
+console.log(newPupilsAge);
+
+const excellentPupils = pupils.filter(person => person.mark > 6); // filters for pupils whose marks over 6
+console.log(excellentPupils);
+
+const totalMark = pupils.reduce((total,person) => total + person.mark, 0); // with each iterration "person" the previousValue "total" modifies with the iterrated value "person.mark". 0 - default number. 
+console.log(totalMark); // sum(12,5,7,3,9)
+
+const newPupilsArr = pupils
+.filter(({ age }) => age > 9)// 1) filter for pupils with age >10
