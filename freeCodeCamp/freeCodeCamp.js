@@ -654,3 +654,23 @@ console.log(totalMark); // sum(12,5,7,3,9)
 
 const newPupilsArr = pupils
 .filter(({ age }) => age > 9)// 1) filter for pupils with age >10
+// .map(pupil => ({
+// 	nickname: pupil.name + " yo"
+// }))
+// .map(pupil => {
+// 	pupil['nickname'] = pupil.name + " yo"
+
+// 	return pupil;
+// });
+// .map(pupil => ({ ...pupil, nickname: `${pupil.name}-yo` }));
+// console.log(newPupilsArr);
+// .map(({name, ...rest}) => rest)
+// console.log('commonArr', commonArr)
+
+// const car = { color: 'black', width: 2, height: 2, price: 40000 }
+
+// // const price = car.price;
+// const { price, ...rest } = car;
+
+// console.log('car full: ', car)
+// console.log('car other: ', rest)
