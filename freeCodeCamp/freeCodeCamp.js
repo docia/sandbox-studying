@@ -665,6 +665,56 @@ const newPupilsArr = pupils
 // .map(pupil => ({ ...pupil, nickname: `${pupil.name}-yo` }));
 // console.log(newPupilsArr);
 // .map(({name, ...rest}) => rest)
+
+// DESTRUCTURING example
+// .map((pupil) => {
+// 	const { name, ...rest } = pupil;
+
+// 	return rest;
+// });
+
+
+// 	/**
+// 	 * DESTRUCTURING looks clean and easy! 
+// 	 */
+// .map(pupil => {
+// 	const { name, age, grade, mark = 1  } = pupil;
+
+// 	const transformedPupil = {
+// 		name,
+// 		age,
+// 		grade,
+// 		transformedMark: mark * 15
+// 	}
+
+// 	return transformedPupil;
+// });
+// console.log(newPupilsArr);
+	
+
+/**
+ * Spread, rest example
+ */
+// .map(({ mark = 1, ...rest }) => ({ 
+// 	...rest,
+// 	transformedMark: mark * 15,
+	
+// }))
+
+// .map((value) => ({
+// 	age: value.age + 5,
+// 	...value,
+// }))
+
+
+// console.log(newPupilsArr);
+
+// const arr1 = [1,2,3]
+// const arr2 = [4,5,6]
+
+// console.log(arr1, arr2)
+
+// const commonArr = [...arr1, ...arr2]
 // console.log('commonArr', commonArr)
 
 // const car = { color: 'black', width: 2, height: 2, price: 40000 }
