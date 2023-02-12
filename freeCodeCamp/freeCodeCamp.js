@@ -665,7 +665,9 @@ const newPupilsArr = pupils.filter(({ age }) => age > 9); // 1) filter for pupil
 // console.log(newPupilsArr);
 // .map(({name, ...rest}) => rest);
 
+//----------------------
 // DESTRUCTURING example
+
 // .map(pupil => {
 // 	const { name, ...rest } = pupil;
 
@@ -689,15 +691,15 @@ const newPupilsArr = pupils.filter(({ age }) => age > 9); // 1) filter for pupil
 // });
 // console.log(newPupilsArr);
 
-/**
- * Spread, rest example
- */
+//----------------------
+//  Spread, rest example
+
 // .map(({ mark = 1, ...rest }) => ({
 // 	...rest,
 // 	transformedMark: mark * 15,
 
 // }))
-
+//----------------------
 // .map(value => ({
 // 	age: value.age + 5,
 // 	...value,
@@ -737,34 +739,40 @@ const {
 } = LOCAL_FORECAST;
 console.log(highToday); // 77
 
-let salaries = {
-	John: 100,
-	Pete: 300,
-	Mary: 250,
-};
+//----------------------
 
-function topSalary(salaries) {
-	return Object.keys(salaries).reduce(
-		(max, s) => (salaries[max] > salaries[s] ? max : s),
-		""
-	);
-}
-alert(topSalary(salaries)); // Pete
+// let salaries = {
+// 	John: 100,
+// 	Pete: 300,
+// 	Mary: 250,
+// };
 
-let prices = {
-	banana: 1,
-	orange: 2,
-	meat: 4,
-};
+// function topSalary(salaries) {
+// 	return Object.keys(salaries).reduce(
+// 		(max, s) => (salaries[max] > salaries[s] ? max : s),
+// 		""
+// 	);
+// }
+// alert(topSalary(salaries)); // Pete
 
-let doublePrices = Object.fromEntries(
-	// перетворює масив [[banana],[1]] назад в об’єкт banana: 1
-	// перетворити ціни на масив, потім застосувати map, щоб перетворити на пари ключ/значення
-	// а потім fromEntries повертає об’єкт
-	Object.entries(prices).map((entry) => [entry[0], entry[1] * 2]) //
-);
+//----------------------
 
-alert(doublePrices.meat); // 8
+// let prices = {
+// 	banana: 1,
+// 	orange: 2,
+// 	meat: 4,
+// };
+
+// let doublePrices = Object.fromEntries(
+// 	// перетворює масив [[banana],[1]] назад в об’єкт banana: 1
+// 	// перетворити ціни на масив, потім застосувати map, щоб перетворити на пари ключ/значення
+// 	// а потім fromEntries повертає об’єкт
+// 	Object.entries(prices).map((entry) => [entry[0], entry[1] * 2]) //
+// );
+
+// alert(doublePrices.meat); // 8
+
+//----------------------
 
 const stats = {
 	max: 56.78,
@@ -777,6 +785,8 @@ const stats = {
 
 const half = ({ max, min }) => (max + min) / 2; // destructuring
 console.log(half(stats)); // 28.015
+
+//----------------------
 
 const result = {
 	success: ["max-length", "no-amd", "prefer-arrow-functions"],
@@ -795,6 +805,8 @@ const failuresList = makeList(result.failure);
 //<li class="text-warning">no-var</li>,
 //<li class="text-warning">var-on-top</li>,
 //<li class="text-warning">linebreak</li>
+
+//----------------------
 
 
  
