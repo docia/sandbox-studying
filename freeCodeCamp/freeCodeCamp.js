@@ -665,10 +665,10 @@ const newPupilsArr = pupils
 // });
 // .map(pupil => ({ ...pupil, nickname: `${pupil.name}-yo` }));
 // console.log(newPupilsArr);
-// .map(({name, ...rest}) => rest)
+// .map(({name, ...rest}) => rest);
 
 // DESTRUCTURING example
-// .map((pupil) => {
+// .map(pupil => {
 // 	const { name, ...rest } = pupil;
 
 // 	return rest;
@@ -729,7 +729,7 @@ const newPupilsArr = pupils
 const totalSum = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 }
-console.log(sum(1,2,3,4)); //10
+console.log(totalSum(1,2,3,4)); //10
 
 const LOCAL_FORECAST = {
   yesterday: { low: 61, high: 75 },
@@ -739,3 +739,16 @@ const LOCAL_FORECAST = {
   
 const { today: {low: lowToday, high: highToday }} = LOCAL_FORECAST;
 console.log(highToday); // 77
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(salaries) {
+return Object.keys(salaries).reduce((max, s) => salaries[max] > salaries[s] ? max : s, '')
+}
+alert(topSalary(salaries)); // Pete
+
+let prices = {
