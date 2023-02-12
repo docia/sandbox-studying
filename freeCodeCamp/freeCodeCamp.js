@@ -622,9 +622,8 @@ console.log(freezeObj());
 // [TypeError: Cannot assign to read only property 'PI' of object '#<Object>']
 // 3.14
 
-
-var magic = function() {
-  return new Date();
+var magic = function () {
+	return new Date();
 };
 // is simpified to ->
 const newMagic = () => new Date();
@@ -637,24 +636,23 @@ console.log(increment(1)); // 1+1=2
 console.log(increment(1, 3)); // 1+3=4
 
 const pupils = [
-	{ name: "Sarah", age: 12, grade: 5, mark: 12},
+	{ name: "Sarah", age: 12, grade: 5, mark: 12 },
 	{ name: "Dean", age: 15, grade: 6, mark: 5 },
 	{ name: "Bob", age: 8, grade: 4, mark: 7 },
 	{ name: "Klara", age: 10, grade: 3 },
-	{ name: "Markus", age: 19, grade: 10, mark: 9},
-]
-const newPupilsAge = pupils.map(person => person.age + 1) // map() - modify a current array in a new one by modifying all the values in an array 
+	{ name: "Markus", age: 19, grade: 10, mark: 9 },
+];
+const newPupilsAge = pupils.map((person) => person.age + 1); // map() - modify a current array in a new one by modifying all the values in an array
 console.log(newPupilsAge);
 
-const excellentPupils = pupils.filter(person => person.mark > 6); // filters for pupils whose marks over 6
+const excellentPupils = pupils.filter((person) => person.mark > 6); // filters for pupils whose marks over 6
 console.log(excellentPupils);
 
-const totalMark = pupils.reduce((total,person) => total + person.mark, 0); // with each iterration "person" the previousValue
-// "total" modifies with the iterrated value "person.mark". 0 - default number. 
+const totalMark = pupils.reduce((total, person) => total + person.mark, 0); // with each iterration "person" the previousValue
+// "total" modifies with the iterrated value "person.mark". 0 - default number.
 console.log(totalMark); // sum(12,5,7,3,9)
 
-const newPupilsArr = pupils
-.filter(({ age }) => age > 9)// 1) filter for pupils with age >10
+const newPupilsArr = pupils.filter(({ age }) => age > 9); // 1) filter for pupils with age >10
 // .map(pupil => ({
 // 	nickname: pupil.name + " yo"
 // }))
@@ -674,9 +672,8 @@ const newPupilsArr = pupils
 // 	return rest;
 // });
 
-
 // 	/**
-// 	 * DESTRUCTURING looks clean and easy! 
+// 	 * DESTRUCTURING looks clean and easy!
 // 	 */
 // .map(pupil => {
 // 	const { name, age, grade, mark = 1  } = pupil;
@@ -691,22 +688,20 @@ const newPupilsArr = pupils
 // 	return transformedPupil;
 // });
 // console.log(newPupilsArr);
-	
 
 /**
  * Spread, rest example
  */
-// .map(({ mark = 1, ...rest }) => ({ 
+// .map(({ mark = 1, ...rest }) => ({
 // 	...rest,
 // 	transformedMark: mark * 15,
-	
+
 // }))
 
 // .map(value => ({
 // 	age: value.age + 5,
 // 	...value,
 // }))
-
 
 // console.log(newPupilsArr);
 
@@ -727,53 +722,79 @@ const newPupilsArr = pupils
 // console.log('car other: ', rest)
 
 const totalSum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
-}
-console.log(totalSum(1,2,3,4)); //10
+	return args.reduce((a, b) => a + b, 0);
+};
+console.log(totalSum(1, 2, 3, 4)); //10
 
 const LOCAL_FORECAST = {
-  yesterday: { low: 61, high: 75 },
-  today: { low: 64, high: 77 },
-  tomorrow: { low: 68, high: 80 }
+	yesterday: { low: 61, high: 75 },
+	today: { low: 64, high: 77 },
+	tomorrow: { low: 68, high: 80 },
 };
-  
-const { today: {low: lowToday, high: highToday }} = LOCAL_FORECAST;
+
+const {
+	today: { low: lowToday, high: highToday },
+} = LOCAL_FORECAST;
 console.log(highToday); // 77
 
 let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
+	John: 100,
+	Pete: 300,
+	Mary: 250,
 };
 
 function topSalary(salaries) {
-return Object.keys(salaries).reduce((max, s) => salaries[max] > salaries[s] ? max : s, '')
+	return Object.keys(salaries).reduce(
+		(max, s) => (salaries[max] > salaries[s] ? max : s),
+		""
+	);
 }
 alert(topSalary(salaries)); // Pete
 
 let prices = {
-  banana: 1,
-  orange: 2,
-  meat: 4,
+	banana: 1,
+	orange: 2,
+	meat: 4,
 };
 
-let doublePrices = Object.fromEntries( // перетворює масив [[banana],[1]] назад в об’єкт banana: 1
-  // перетворити ціни на масив, потім застосувати map, щоб перетворити на пари ключ/значення
-  // а потім fromEntries повертає об’єкт
-  Object.entries(prices).map(entry => [entry[0], entry[1] * 2]) //
+let doublePrices = Object.fromEntries(
+	// перетворює масив [[banana],[1]] назад в об’єкт banana: 1
+	// перетворити ціни на масив, потім застосувати map, щоб перетворити на пари ключ/значення
+	// а потім fromEntries повертає об’єкт
+	Object.entries(prices).map((entry) => [entry[0], entry[1] * 2]) //
 );
 
 alert(doublePrices.meat); // 8
 
 const stats = {
-  max: 56.78,
-  standard_deviation: 4.34,
-  median: 34.54,
-  mode: 23.87,
-  min: -0.75,
-  average: 35.85
+	max: 56.78,
+	standard_deviation: 4.34,
+	median: 34.54,
+	mode: 23.87,
+	min: -0.75,
+	average: 35.85,
 };
 
-const half = ({max, min}) => (max+min) / 2; // destructuring
+const half = ({ max, min }) => (max + min) / 2; // destructuring
 console.log(half(stats)); // 28.015
 
+const result = {
+	success: ["max-length", "no-amd", "prefer-arrow-functions"],
+	failure: ["no-var", "var-on-top", "linebreak"],
+	skipped: ["no-extra-semi", "no-dup-keys"],
+};
+function makeList(arr) {
+	const failureItems = arr.map((item) => `<li class="text-warning">${item}</li>`); 
+	// iteration by item through failure 
+
+	return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+// output: 
+//<li class="text-warning">no-var</li>,
+//<li class="text-warning">var-on-top</li>,
+//<li class="text-warning">linebreak</li>
+
+
+ 
