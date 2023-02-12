@@ -752,3 +752,16 @@ return Object.keys(salaries).reduce((max, s) => salaries[max] > salaries[s] ? ma
 alert(topSalary(salaries)); // Pete
 
 let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+
+let doublePrices = Object.fromEntries( // перетворює масив [[banana],[1]] назад в об’єкт banana: 1
+  // перетворити ціни на масив, потім застосувати map, щоб перетворити на пари ключ/значення
+  // а потім fromEntries повертає об’єкт
+  Object.entries(prices).map(entry => [entry[0], entry[1] * 2]) //
+);
+
+alert(doublePrices.meat); // 8
+
