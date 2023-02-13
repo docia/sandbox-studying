@@ -774,39 +774,194 @@ console.log(highToday); // 77
 
 //----------------------
 
-const stats = {
-	max: 56.78,
-	standard_deviation: 4.34,
-	median: 34.54,
-	mode: 23.87,
-	min: -0.75,
-	average: 35.85,
-};
+// const stats = {
+// 	max: 56.78,
+// 	standard_deviation: 4.34,
+// 	median: 34.54,
+// 	mode: 23.87,
+// 	min: -0.75,
+// 	average: 35.85,
+// };
 
-const half = ({ max, min }) => (max + min) / 2; // destructuring
-console.log(half(stats)); // 28.015
+// const half = ({ max, min }) => (max + min) / 2; // destructuring
+// console.log(half(stats)); // 28.015
 
-//----------------------
+// //----------------------
 
-const result = {
-	success: ["max-length", "no-amd", "prefer-arrow-functions"],
-	failure: ["no-var", "var-on-top", "linebreak"],
-	skipped: ["no-extra-semi", "no-dup-keys"],
-};
-function makeList(arr) {
-	const failureItems = arr.map((item) => `<li class="text-warning">${item}</li>`); 
-	// iteration by item through failure 
+// const result = {
+// 	success: ["max-length", "no-amd", "prefer-arrow-functions"],
+// 	failure: ["no-var", "var-on-top", "linebreak"],
+// 	skipped: ["no-extra-semi", "no-dup-keys"],
+// };
+// function makeList(arr) {
+// 	const failureItems = arr.map((item) => `<li class="text-warning">${item}</li>`); 
+// 	// iteration by item through failure 
 
-	return failureItems;
+// 	return failureItems;
+// }
+
+// const failuresList = makeList(result.failure);
+// // output: 
+// //<li class="text-warning">no-var</li>,
+// //<li class="text-warning">var-on-top</li>,
+// //<li class="text-warning">linebreak</li>
+
+// //----------------------
+
+// // EXCERSISES map()
+//  function doubleNumbers(arr){
+// 	return arr.map(i => i*2);
+// }
+
+// console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
+
+// //1----------------------
+// function stringItUp(arr){
+//   return arr.map(i => i.toString());
+// }
+
+// console.log(stringItUp([2, 5, 100]))
+
+// //2----------------------
+// function capitalizeNames(arr){
+// 	return arr.map(i => i[0].toUpperCase()+i.slice(1).toLowerCase());
+// }
+
+// console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
+
+// //3----------------------
+// function namesOnly(arr){
+// 	return arr.map(({nick}) => nick); // === arr.map(item => item.nick);
+// }
+
+// console.log(namesOnly([
+//     {
+//         nick: "Angelina Jolie",
+//         age: 80
+//     },
+//     {
+//         nick: "Eric Jones",
+//         age: 2
+//     },
+//     {
+//         nick: "Paris Hilton",
+//         age: 5
+//     },
+//     {
+//         nick: "Kayne West",
+//         age: 16
+//     },
+//     {
+//         nick: "Bob Ziroll",
+//         age: 100
+//     }
+// ])); 
+
+// function doubleArrayNames(arr) {
+// 	// return arr.map(innerArr =>  innerArr.map(item => item.nick)).flat()
+// 	// return arr.flat().map(item => item.nick)
+// 	return arr.reduce((acc, innerArr) => {
+// 		innerArr.forEach(item => acc.push(item.nick))
+
+// 		return acc;
+// 	}, [])
+// }
+
+// const dobuleArray = [[
+//     {
+//         nick: "Angelina Jolie",
+//         age: 80
+//     },
+//     {
+//         nick: "Eric Jones",
+//         age: 2
+//     },
+// ],
+// [
+//     {
+//         nick: "Paris Hilton",
+//         age: 5
+//     },
+//     {
+//         nick: "Kayne West",
+//         age: 16
+//     },
+// ],
+// [
+//     {
+//         nick: "Bob Ziroll",
+//         age: 100
+//     }
+// ]];
+
+// console.log(doubleArrayNames(dobuleArray))
+
+
+// console.log(dobuleArray)
+// console.log(dobuleArray.flat()) /// ['Angelina Jolie', 'Eric Jones', 'Paris Hilton', 'Kayne West', 'Bob Ziroll']
+
+//4----------------------
+function makeStrings(arr){
+	return arr.map(({newName, age }) => ( age >= 80) ? `${newName} can go to The Matrix` : `${newName} is under age!!`);
 }
 
-const failuresList = makeList(result.failure);
-// output: 
-//<li class="text-warning">no-var</li>,
-//<li class="text-warning">var-on-top</li>,
-//<li class="text-warning">linebreak</li>
+console.log(makeStrings([
+    {
+        newName: "Angelina Jolie",
+        age: 80
+    },
+    {
+        newName: "Eric Jones",
+        age: 2
+    },
+    {
+        newName: "Paris Hilton",
+        age: 5
+    },
+    {
+        newName: "Kayne West",
+        age: 16
+    },
+    {
+        newName: "Bob Ziroll",
+        age: 100
+    }
+]));
+// ["Angelina Jolie can go to The Matrix", 
+// "Eric Jones is under age!!", 
+// "Paris Hilton is under age!!", 
+// "Kayne West is under age!!", 
+// "Bob Ziroll can go to The Matrix"]
 
-//----------------------
-
-
- 
+//5----------------------
+function readyToPutInTheDOM(arr){
+	// return arr.map(item => `<h1>${item.name}</h1><h2>${item.age}</h2>`);
+	return arr.map(({name: namee, age: agee}) => `<h1>${namee}</h1><h2>${agee}</h2>`); // with destructing
+}
+console.log(readyToPutInTheDOM([
+    {
+        name: "Angelina Jolie",
+        age: 80
+    },
+    {
+        name: "Eric Jones",
+        age: 2
+    },
+    {
+        name: "Paris Hilton",
+        age: 5
+    },
+    {
+        name: "Kayne West",
+        age: 16
+    },
+    {
+        name: "Bob Ziroll",
+        age: 100
+    }
+])); 
+// ["<h1>Angelina Jolie</h1><h2>80</h2>", 
+// "<h1>Eric Jones</h1><h2>2</h2>", 
+// "<h1>Paris Hilton</h1><h2>5</h2>", 
+// "<h1>Kayne West</h1><h2>16</h2>", 
+// "<h1>Bob Ziroll</h1><h2>100</h2>"]
