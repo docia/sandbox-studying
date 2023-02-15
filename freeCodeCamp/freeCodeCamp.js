@@ -794,14 +794,14 @@ console.log(highToday); // 77
 // 	skipped: ["no-extra-semi", "no-dup-keys"],
 // };
 // function makeList(arr) {
-// 	const failureItems = arr.map((item) => `<li class="text-warning">${item}</li>`); 
-// 	// iteration by item through failure 
+// 	const failureItems = arr.map((item) => `<li class="text-warning">${item}</li>`);
+// 	// iteration by item through failure
 
 // 	return failureItems;
 // }
 
 // const failuresList = makeList(result.failure);
-// // output: 
+// // output:
 // //<li class="text-warning">no-var</li>,
 // //<li class="text-warning">var-on-top</li>,
 // //<li class="text-warning">linebreak</li>
@@ -855,7 +855,7 @@ console.log(highToday); // 77
 //         nick: "Bob Ziroll",
 //         age: 100
 //     }
-// ])); 
+// ]));
 
 // function doubleArrayNames(arr) {
 // 	// return arr.map(innerArr =>  innerArr.map(item => item.nick)).flat()
@@ -896,72 +896,103 @@ console.log(highToday); // 77
 
 // console.log(doubleArrayNames(dobuleArray))
 
-
 // console.log(dobuleArray)
 // console.log(dobuleArray.flat()) /// ['Angelina Jolie', 'Eric Jones', 'Paris Hilton', 'Kayne West', 'Bob Ziroll']
 
 //4----------------------
-function makeStrings(arr){
-	return arr.map(({newName, age }) => ( age >= 80) ? `${newName} can go to The Matrix` : `${newName} is under age!!`);
+function makeStrings(arr) {
+	return arr.map(({ newName, age }) =>
+		age >= 80 ? `${newName} can go to The Matrix` : `${newName} is under age!!`
+	);
 }
 
-console.log(makeStrings([
-    {
-        newName: "Angelina Jolie",
-        age: 80
-    },
-    {
-        newName: "Eric Jones",
-        age: 2
-    },
-    {
-        newName: "Paris Hilton",
-        age: 5
-    },
-    {
-        newName: "Kayne West",
-        age: 16
-    },
-    {
-        newName: "Bob Ziroll",
-        age: 100
-    }
-]));
-// ["Angelina Jolie can go to The Matrix", 
-// "Eric Jones is under age!!", 
-// "Paris Hilton is under age!!", 
-// "Kayne West is under age!!", 
+console.log(
+	makeStrings([
+		{
+			newName: "Angelina Jolie",
+			age: 80,
+		},
+		{
+			newName: "Eric Jones",
+			age: 2,
+		},
+		{
+			newName: "Paris Hilton",
+			age: 5,
+		},
+		{
+			newName: "Kayne West",
+			age: 16,
+		},
+		{
+			newName: "Bob Ziroll",
+			age: 100,
+		},
+	])
+);
+// ["Angelina Jolie can go to The Matrix",
+// "Eric Jones is under age!!",
+// "Paris Hilton is under age!!",
+// "Kayne West is under age!!",
 // "Bob Ziroll can go to The Matrix"]
 
 //5----------------------
-function readyToPutInTheDOM(arr){
+function readyToPutInTheDOM(arr) {
 	// return arr.map(item => `<h1>${item.name}</h1><h2>${item.age}</h2>`);
-	return arr.map(({name: namee, age: agee}) => `<h1>${namee}</h1><h2>${agee}</h2>`); // with destructing
+	return arr.map(
+		({ name: namee, age: agee }) => `<h1>${namee}</h1><h2>${agee}</h2>`
+	); // with destructing
 }
-console.log(readyToPutInTheDOM([
-    {
-        name: "Angelina Jolie",
-        age: 80
-    },
-    {
-        name: "Eric Jones",
-        age: 2
-    },
-    {
-        name: "Paris Hilton",
-        age: 5
-    },
-    {
-        name: "Kayne West",
-        age: 16
-    },
-    {
-        name: "Bob Ziroll",
-        age: 100
-    }
-])); 
-// ["<h1>Angelina Jolie</h1><h2>80</h2>", 
-// "<h1>Eric Jones</h1><h2>2</h2>", 
-// "<h1>Paris Hilton</h1><h2>5</h2>", 
-// "<h1>Kayne West</h1><h2>16</h2>", 
+console.log(
+	readyToPutInTheDOM([
+		{
+			name: "Angelina Jolie",
+			age: 80,
+		},
+		{
+			name: "Eric Jones",
+			age: 2,
+		},
+		{
+			name: "Paris Hilton",
+			age: 5,
+		},
+		{
+			name: "Kayne West",
+			age: 16,
+		},
+		{
+			name: "Bob Ziroll",
+			age: 100,
+		},
+	])
+);
+// ["<h1>Angelina Jolie</h1><h2>80</h2>",
+// "<h1>Eric Jones</h1><h2>2</h2>",
+// "<h1>Paris Hilton</h1><h2>5</h2>",
+// "<h1>Kayne West</h1><h2>16</h2>",
 // "<h1>Bob Ziroll</h1><h2>100</h2>"]
+
+let salaries = {
+	John: 100,
+	Ann: 160,
+	Pete: 130,
+};
+
+//  const sumSalaries = ({key}) => salaries.reduce((sum, person) => sum + person[key], 0);
+// console.log(sumSalaries(salaries));
+
+function sumSalaries(obj) {
+	sum = 0;
+	for (let key in obj) {
+		sum += obj[key];
+	}
+	return sum;
+}
+
+function sumSalaries2(people) {
+	return Object.values(people).reduce((sum, salary) =>  sum + salary, 0)
+	// return Object.entries(people).reduce((sum, person) => sum + person[1], 0)
+}
+
+console.log(sumSalaries2(salaries));
