@@ -991,8 +991,33 @@ function sumSalaries(obj) {
 }
 
 function sumSalaries2(people) {
-	return Object.values(people).reduce((sum, salary) =>  sum + salary, 0)
+	return Object.values(people).reduce((sum, salary) => sum + salary, 0);
 	// return Object.entries(people).reduce((sum, person) => sum + person[1], 0)
 }
 
 console.log(sumSalaries2(salaries));
+
+let menu = {
+	width: 200,
+	height: 300,
+	title: "Моє меню",
+};
+
+const multiplyValues = ({ width, height, title }) => {
+	const changedValues = {
+		width: width * 2,
+		height: height * 2,
+		title,
+	};
+	return changedValues;
+};
+
+console.log(multiplyValues(menu));
+
+// function multiplyNumeric(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == 'number') {
+//       obj[key] *= 2;
+//     }
+//   }
+// }
