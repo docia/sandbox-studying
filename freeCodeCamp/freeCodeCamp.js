@@ -1060,6 +1060,34 @@ let clone3 = Object.assign({}, user3);
 user3.sizes.height++;
 console.log(clone3.sizes.height); // 183
 
+//----------------------
+let user4 = {
+  name: "Даша"
+};
+
+let admin = user4;
+user4 = null;
+console.log(admin); // Даша
+
+//----------------------
+function makeUser() {
+  return {
+    name: "Іван",
+    ref: this
+  };
+}
+
+let user5 = makeUser();
+
+alert( user5.name );
+
+//----------------------
+// наслідування/прототип
+//----------------------
+let baby = { scream: true };
+
+function Human(name) {
+	this.name = name;
 }
 
 Human.prototype = baby;
