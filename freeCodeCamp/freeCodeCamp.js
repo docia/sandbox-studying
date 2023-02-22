@@ -1021,3 +1021,62 @@ console.log(multiplyValues(menu));
 //     }
 //   }
 // }
+
+//*********/
+// CLASSES//
+//*********/
+
+class Animals {
+	constructor(name) {
+		this.name = name;
+	}
+
+	mew() {
+		alert(this.name + " meow");
+	}
+}
+let animal = new Animals("cat");
+// animal.mew();
+}
+
+Human.prototype = baby;
+
+let human = new Human("jhon little");
+// alert(human.scream);
+
+//----------------------
+let animal2 = {
+  eats: true,
+  walk() {
+    alert("Тварина йде");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal2 // #1
+};
+
+// rabbit.__proto__ = animal2; // #2
+
+// тут метод walk береться з прототипу
+// rabbit.walk(); // отримуємо "Тварина йде"
+
+//----------------------
+let child = {
+	cries: true,
+	walk() { return "she walks"}
+};
+
+let mum = {
+	loves: true,
+	__proto__: child
+};
+
+// mum.walk = function () {
+// 	return("she walks");
+// }
+
+console.log(mum.walk()); // she walks
+
+//----------------------
