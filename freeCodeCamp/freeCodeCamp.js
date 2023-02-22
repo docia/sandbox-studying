@@ -1037,6 +1037,29 @@ class Animals {
 }
 let animal = new Animals("cat");
 // animal.mew();
+
+let user = { name: 'Pawel' };
+let hisFriends = { name1: 'Sarah', name2: 'Dean' };
+// copy all properties from hisFriends to users
+console.log(Object.assign(user, hisFriends)); // {name: 'Pawel', name1: 'Sarah', name2: 'Dean'}
+
+//----------------------
+let user2 = { name: "Ted" };
+let clone = Object.assign({}, user2);
+console.log(clone);
+
+//----------------------
+let user3 = {
+  name: "Іван",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+let clone3 = Object.assign({}, user3);
+user3.sizes.height++;
+console.log(clone3.sizes.height); // 183
+
 }
 
 Human.prototype = baby;
