@@ -1038,6 +1038,7 @@ class Animals {
 let animal = new Animals("cat");
 // animal.mew();
 
+//----------------------
 let user = { name: "Pawel" };
 let hisFriends = { name1: "Sarah", name2: "Dean" };
 // copy all properties from hisFriends to users
@@ -1082,18 +1083,18 @@ let user5 = makeUser();
 // alert(user5.name);
 
 //----------------------
-let calculator = {
-	read() {
-		this.a1 = +prompt("a1?", "");
-		this.b1 = +prompt("b1?", "");
-	},
-	sum() {
-		return this.a1 + this.b1;
-	},
-	mul() {
-		return this.a1 * this.b1;
-	},
-};
+// let calculator = {
+// 	read() { // == read: function() {this.a1 = +prompt("a1?", ""); this.b1 = +prompt("b1?", "");}
+// 		this.a1 = +prompt("a1?", "");
+// 		this.b1 = +prompt("b1?", "");
+// 	},
+// 	sum() {
+// 		return this.a1 + this.b1;
+// 	},
+// 	mul() {
+// 		return this.a1 * this.b1;
+// 	},
+// };
 
 // calculator.read();
 // alert(calculator.sum());
