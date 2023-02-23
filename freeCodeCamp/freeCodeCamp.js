@@ -1079,7 +1079,25 @@ function makeUser() {
 
 let user5 = makeUser();
 
-alert( user5.name );
+// alert(user5.name);
+
+//----------------------
+let calculator = {
+	read() {
+		this.a1 = +prompt("a1?", "");
+		this.b1 = +prompt("b1?", "");
+	},
+	sum() {
+		return this.a1 + this.b1;
+	},
+	mul() {
+		return this.a1 * this.b1;
+	},
+};
+
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
 
 //----------------------
 // наслідування/прототип
