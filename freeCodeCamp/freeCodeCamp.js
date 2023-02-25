@@ -1101,22 +1101,38 @@ let user5 = makeUser();
 // alert(calculator.mul());
 
 //----------------------
-function Calculator() {
-	this.read = function () {
-		this.val1 = +prompt("val1?", "");
-		this.val2 = +prompt("val2?", "");
+// function Calculator() {
+// 	this.read = function () {
+// 		this.val1 = +prompt("val1?", "");
+// 		this.val2 = +prompt("val2?", "");
+// 	};
+// 	this.sum = function () {
+// 		return this.val1 + this.val2;
+// 	};
+// 	this.mul = function () {
+// 		return this.val1 * this.val2;
+// 	};
+// }
+// let calculator = new Calculator();
+// calculator.read();
+// alert("Sum=" + calculator.sum());
+// alert("Mul=" + calculator.mul());
+
+//----------------------
+function Accumulator(startingValue) {
+	this.value = startingValue;
+	
+	this.read = function() {
+		this.value  += +prompt("Скільки додати?", "");
 	};
-	this.sum = function () {
-		return this.val1 + this.val2;
-	};
-	this.mul = function () {
-		return this.val1 * this.val2;
-	}
+	return this;
 }
-let calculator = new Calculator();
-calculator.read();
-alert("Sum=" + calculator.sum());
-alert( "Mul=" + calculator.mul() );
+let accumulator = Accumulator(1);
+accumulator.read(); 
+accumulator.read(); 
+alert(accumulator.value);
+
+
 
 //----------------------
 // наслідування/прототип
