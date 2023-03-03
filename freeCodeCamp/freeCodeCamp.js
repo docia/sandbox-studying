@@ -1128,9 +1128,9 @@ function Accumulator(startingValue) {
 	return this;
 }
 let accumulator = Accumulator(1);
-accumulator.read(); 
-accumulator.read(); 
-alert(accumulator.value);
+// accumulator.read(); 
+// accumulator.read(); 
+// alert(accumulator.value);
 
 
 
@@ -1186,3 +1186,33 @@ let mum = {
 console.log(mum.walk()); // she walks
 
 //----------------------
+let head = {
+  glasses: 1
+};
+
+let table = {
+  pen: 3,
+  __proto__: head
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__:table
+};
+
+let pockets = {
+  money: 2000,
+  __proto__: bed
+};
+alert(pockets.glasses);
+
+//----------------------
+function User(surname){
+	this.surname = surname;
+
+}
+
+let userMan = new User('stivenson');
+let userGirl = new userMan.constructor('palompina')
+alert(userGirl.surname);
